@@ -9,6 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import co.com.ensayoMVC.model.BarberoDTO;
 import co.com.ensayoMVC.model.SessionFirstPageDTO;
+import co.com.ensayoMVC.services.EnsayoMVCFacade;
 
 @Controller 
 public class BarberosController {
@@ -61,5 +62,14 @@ public class BarberosController {
 		model.addObject("barberosLista",barberosLista.listIterator());
 	
 		return model;
+	}
+	
+	@RequestMapping(value="/barbero",method = RequestMethod.GET)
+	public ModelAndView barbero1() {
+		EnsayoMVCFacade barberFacade = new EnsayoMVCFacade();		
+		return new ModelAndView("barberos1", "barberInfo", barberFacade.getBarberoPageDTO());
+		
+
+		
 	}
 }

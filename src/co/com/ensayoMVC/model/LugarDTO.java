@@ -6,7 +6,10 @@ public class LugarDTO implements Serializable {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = -8871651137376779965L;
+	/**
+	 * 
+	 */
 	private int id;
 	private String nombre;
 	private String direccion;
