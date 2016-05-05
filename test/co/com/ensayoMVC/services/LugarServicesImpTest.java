@@ -18,25 +18,34 @@ public class LugarServicesImpTest {
 
 	/**
 	 * Test method for {@link co.com.ensayoMVC.services.LugarServicesImpl#findById(int)}.
+	 * @throws IllegalAccessException 
+	 * @throws InstantiationException 
+	 * @throws SecurityException 
+	 * @throws NoSuchMethodException 
 	 */
 	@Test
-	public void testFindById() {
-		int lugarId=2;
+	public void testFindById()  {
+		int lugarId=1;
 		LugarServices lugarServices = new LugarServicesImp();
-		assertNotNull(lugarServices.findById(lugarId));
+		try {
+			assertNotNull(lugarServices.findById(lugarId));
+		} catch ( SecurityException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	
 	/**
 	 * Test method for {@link co.com.ensayoMVC.services.LugarServicesImpl#findByIdList()}.
 	 */
-	@Test
-	public void testFindByIdList() {
+	
+	/*public void testFindByIdList() {
 		
 		LugarServices lugarServices = new LugarServicesImp();
 		assertNotNull(lugarServices.findByIdList());
 		
 		
-	}
+	}*/
 
 }

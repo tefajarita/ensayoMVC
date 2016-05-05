@@ -79,5 +79,15 @@
 	    	<artifactId>udem_jdbc</artifactId>
 	    	<version>0.0.1-SNAPSHOT</version>
 	    </dependency>
+	        <dependency>
+	    	<groupId>udem_jpa</groupId>
+	    	<artifactId>udem_jpa</artifactId>
+	    	<version>0.0.1-SNAPSHOT</version>
+	    </dependency>
+	    	<dependency>
+			<groupId>udem_common</groupId>
+			<artifactId>udem_common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
   	</dependencies> 
 </project>

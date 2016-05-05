@@ -29,66 +29,7 @@
 				<img width="100%" height="100%" src="<c:url value="${imagen1['imagePath']}" />"   /> 
            	
 				
-			<nav class="navbar navbar-default" role="navigation">
-			
-				<div class="navbar-header">
-					 
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-						 <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-					</button> <a>
-								<form method="POST" action="index">
-									<input type="submit" value="NOSOTROS">
-								</form></a>
-				</div>
-				
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav">
-					
-						<li >
-								<a>
-								<form method="POST" action="servicios">
-									<input type="submit" value="SERVICIOS">
-								</form>
-							</a>
-						</li>
-						<li>
-								<a>
-								<form method="GET" action="barberos">
-									<input type="submit" value="BARBEROS">
-								</form>
-							</a>
-						</li>
-						
-						<li>
-								<a>
-								<form method="POST" action="reservas">
-									<input type="submit" value="RESERVAS">
-								</form>
-							</a>
-						</li>
-						<li>
-								<a>
-								<form method="POST" action="empleados">
-									<input type="submit" value="EMPLEADOS">
-								</form>
-							</a>
-						</li>
-						
-						
-						<li>
-							<a>
-								<form method="POST" action="contacto">
-									<input type="submit" value="contacto">
-								</form>
-							</a>
-						</li>
-						
-					</ul>
-				
-				
-				</div>
-				
-			</nav>
+			<jsp:include page="menu.jsp" />
 			<div align="center"><img width="30%" height="100%" src="<c:url value="${imagen2['imagePath']}" />"   /> </div><BR>
 		
 			
@@ -116,6 +57,27 @@
 			
 			
 		</div>
+		
+		<!-- implementacion desde la base de datos -->
+		
+		<div class="row">
+			<c:forEach var="ser"   items="${servicioInfo.serviciosList}">
+		<div class="col-md-4">
+			<h2>
+				${servicioInfo.ser['nombre']}
+			</h2>
+			<%-- <div>
+				<img alt="211px" height="315px" src="<c:url value="${barberInfo.bar['fotoperfil']}" />" />
+			</div> --%>
+			<blockquote>
+			<p align="JUSTIFY">
+			${servicioInfo.ser['descripcion']}
+			</p>
+			</blockquote>
+		</div>
+		</c:forEach>
+	
+	</div>
       </div>
     </div>
     <div class="panel panel-default">

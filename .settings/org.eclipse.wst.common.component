@@ -7,6 +7,12 @@
         <dependent-module archiveName="udem_jdbc-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/udem_jdbc/udem_jdbc">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="udem_jpa-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/udem_jpa/udem_jpa">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="udem_common-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/udem_common/udem_common">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="ensayoMVC"/>
         <property name="java-output-path" value="/ensayoMVC/build/classes"/>
     </wb-module>

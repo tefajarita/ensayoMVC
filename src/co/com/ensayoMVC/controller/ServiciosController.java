@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import co.com.ensayoMVC.model.SessionFirstPageDTO;
+import co.com.ensayoMVC.services.EnsayoMVCFacade;
 
 @Controller
 public class ServiciosController {
@@ -63,5 +64,15 @@ public class ServiciosController {
 		model.addObject("afectado",afectado);
 		return model;
     }
+	
+	
+	@RequestMapping(value="/servicio",method = RequestMethod.GET)
+	public ModelAndView barbero1() {
+		EnsayoMVCFacade barberFacade = new EnsayoMVCFacade();		
+		return new ModelAndView("servicios", "serviciosInfo", barberFacade.getServicioPageDTO());
+		
+
+		
+	}
 
 }

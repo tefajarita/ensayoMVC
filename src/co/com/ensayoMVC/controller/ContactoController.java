@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import co.com.ensayoMVC.model.ContactoDTO;
 import co.com.ensayoMVC.model.SessionFirstPageDTO;
+import co.com.ensayoMVC.services.EnsayoMVCFacade;
 
 
 @Controller
@@ -48,5 +49,15 @@ public class ContactoController {
 	@RequestMapping(value="/volverContact",method=RequestMethod.POST)
 	public ModelAndView volverContact (){ 	 	 	
 		return new ModelAndView ("redirect:contacto");
+	}
+	
+	
+	@RequestMapping(value="/lugar",method = RequestMethod.GET)
+	public ModelAndView barbero1() {
+		EnsayoMVCFacade barberFacade = new EnsayoMVCFacade();		
+		return new ModelAndView("contacto", "contactoInfo", barberFacade.getLugarPageDTO());
+		
+
+		
 	}
 }
